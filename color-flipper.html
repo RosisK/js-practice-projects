@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+
+    <!-- CSS -->
+     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+     </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="dropdown">
+            <input class="input-box" type="text" placeholder>
+            <select name="Color format" class="color-format">
+                <option value="hex">Hex code</option>
+                <option value="rgb">RGB</option>
+                <option value="name">Name</option>
+            </select>
+        </div>
+        <button class="click-me">Click Me</button>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+        // HTML Elements
+        const button = document.querySelector(".click-me");
+        const input = document.querySelector(".input-box");
+        const colorFormatSelector = document.querySelector(".color-format");
+
+        // Function to change background color
+        const changeBg = () => {
+            const color = input.value;
+            const colorFormat = colorFormatSelector.value;
+            
+            try {
+                const err = "Error! The color doesn't match the selected format!";
+                if (colorFormat === "hex") {
+                    if (isNaN(color)) {
+                        throw err;
+                    }
+                } else if (colorFormat === "rgb") {
+
+                }
+            } catch(err) {
+
+            }
+            
+            // Checking for valid color format
+
+            document.body.style.backgroundColor = `${color}`;
+        }
+
+        // Event listener for the button
+        button.addEventListener("click", changeBg);
+    </script>
+</body>
+</html>
