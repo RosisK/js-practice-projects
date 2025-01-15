@@ -8,4 +8,8 @@ const changeTitle = () => {
 }
 
 changeBtn.addEventListener("click", changeTitle);
-
+inputBox.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        changeTitle();
+    }
+});
